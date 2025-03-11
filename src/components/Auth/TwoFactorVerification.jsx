@@ -51,7 +51,7 @@ const TwoFactorVerification = () => {
           🔒 Two-Factor Authentication
         </h2>
         <p className="text-gray-600 text-center mb-6">
-          Enter the 6-digit authentication code sent to your device.
+          Enter the 6-digit authentication generate from your device.
         </p>
 
         <div className="flex justify-center mb-4">
@@ -79,7 +79,6 @@ const TwoFactorVerification = () => {
 
         <p className="text-gray-500 text-sm text-center mt-6">
           Didn’t receive a code?{" "}
-          <button className="text-blue-600 hover:underline">Resend</button>
         </p>
       </div>
     </div>
