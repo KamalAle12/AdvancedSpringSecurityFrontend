@@ -1,12 +1,50 @@
-# React + Vite
+# 🛡️ Advanced Security System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack authentication and authorization system using **React** and **Tailwind CSS** on the frontend, and **Spring Boot** on the backend. Features include:
 
-Currently, two official plugins are available:
+- JWT Authentication
+- Role-Based Access Control (RBAC)
+- Two-Factor Authentication (2FA)
+- Forgot/Reset Password
+- Token Expiration Handling
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend
+- React
+- React Router
+- Tailwind CSS
+- Axios
+- jwt-decode
+
+### Backend
+- Spring Boot
+- Spring Security
+- JWT
+- Hibernate + JPA
+- MySQL
+
+---
+
+## ✨ Features
+
+- ✅ Secure Login / Register / Logout
+- 🔐 JWT Token with Expiration Check
+- 🔄 Refresh Token Logic (Optional)
+- 🔑 Two-Factor Authentication (via OTP)
+- 📧 Forgot / Reset Password via Email
+- 👮 Role-based Access (Admin/User)
+- ⚡ SPA with React Router
+- 🌈 Beautiful UI with Tailwind CSS
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Dashboard / Profile Page
+![Profile Page](springSecurity.png)
+
+---
+
