@@ -4,6 +4,7 @@ const API_URL = "http://localhost:8080/";
 
 const getAuthToken = () => localStorage.getItem("token");
 
+
 export const signIn = async(username, password) => {
     const response = await axios.post(`${API_URL}api/auth/public/signin`, {
         username,
@@ -12,9 +13,11 @@ export const signIn = async(username, password) => {
 
     if (response.data.jwtToken) {
         localStorage.setItem("token", response.data.jwtToken);
+        console.log("Token stored in localStorage: ", response.data.jwtToken);
     }
     return response.data;
 }
+
 
 export const signUp = async({ username, email, password }) => {
     const response = await axios.post(`${API_URL}api/auth/public/signup`, {
@@ -40,6 +43,27 @@ export const getUserDetails = async() => {
         throw error;
     }
 }
+
+// export const getUserDetails = async() => {
+//     const token = getAuthToken();
+//     if (!token) {
+//         throw new Error("No token found in localStorage");
+//     }
+
+//     try {
+//         const response = await axios.get(`${API_URL}api/auth/user`, {
+//             headers: {
+//                 Authorization: `Bearer ${token}`
+//             },
+//         });
+//         return response.data;
+//     } catch (error) {
+//         console.log("Error while fetching user details", error);
+//         throw error;
+//     }
+// }
+
+
 
 export const getCurrentUsername = async() => {
     try {

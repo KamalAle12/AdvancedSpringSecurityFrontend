@@ -10,7 +10,7 @@ import {
 } from "../../assets/services/api";
 import avatar from "../../assets/img/avatar.png";
 
-const Profile = () => {
+const Profile1 = () => {
   const [user, setUser] = useState(null);
   const [twoFAEnabled, setTwoFAEnabled] = useState(false);
   const [qrUrl, setQrUrl] = useState("");
@@ -26,7 +26,6 @@ const Profile = () => {
     logout();
     window.location.href = "/login";
   };
-
 
   const fetchUserDetails = async () => {
     try {
@@ -198,4 +197,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Profile1;

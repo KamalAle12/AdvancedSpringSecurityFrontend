@@ -6,15 +6,28 @@ import Register from "./components/Auth/Register";
 import TwoFactorVerification from "./components/Auth/TwoFactorVerification";
 import ForgotPassword from "./components/Auth/ForgotPassword";
 import ResetPassword from "./components/Auth/ResetPassword";
+import Profile1 from "./components/profile/Profile1";
+import { jwtDecode } from "jwt-decode";
 
 const App = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(
-    !!localStorage.getItem("token") // Check if user is already logged in
-  );
+  
+  const checkTokenExpiration = (token) => {
+    try {
+      const decoded = jwtDecode(token);
+      return decoded.exp > Date.now()/1000; // Check if token is still valid
+    } catch (e) {
+      return false; // If decoding fails, consider the token invalid
+    }
+  };
+
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    const token = localStorage.getItem("token");
+    return token && checkTokenExpiration(token);
+  });
+
 
   // Function to handle login
   const handleLogin = (token) => {
-    localStorage.setItem("token", token);
     setIsAuthenticated(true); // Update authentication state
   };
 
@@ -47,6 +60,7 @@ const App = () => {
 
         {/* Redirect root to login or profile */}
         <Route path="*" element={<Navigate to={isAuthenticated ? "/profile" : "/login"} />} />
+        <Route path="/profile1" element = {<Profile1/>}/>
       </Routes>
     </Router>
   );
